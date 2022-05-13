@@ -1,21 +1,26 @@
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native'
+import { useEffect } from 'react'
 
 const Welcome = () => {
-
+    useEffect(() => {
+        setTimeout(() => {
+            navigation.navigate('Login')
+        }, 3000);
+    })
     const navigation = useNavigation();
 
     const goTo = () => {
-        navigation.navigate('Login')
+       
     }
     
     return (
         <View style={styles.container}>
             <Text style={styles.textStyle}>Welcome</Text>
-            <TouchableOpacity style={styles.btn} onPress={goTo}>
+            {/* <TouchableOpacity style={styles.btn} onPress={goTo}>
                 <Text>Login</Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
         </View>
     )
 }
